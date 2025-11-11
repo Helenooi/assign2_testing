@@ -1,0 +1,221 @@
+.space-box {
+  height: 100px;
+}
+
+body{
+    background-color: white;
+  }
+  #myInput {
+      
+      width: 100%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
+    }
+    
+    #myUL {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    #myUL li a {
+      border: 1px solid #ddd;
+      background-color: #f6f6f6;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      color: black;
+      display: block;
+      text-align: left; 
+      }
+  
+    .attraction-banners {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      height: auto;
+      background-color: gainsboro;
+  
+    }
+    
+    .attraction-banner-manage {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    
+    .attraction-container16 {
+      display: flex;
+      align-items: flex-start; 
+      justify-content: space-between;
+      background-color: gainsboro;
+      
+    }
+    
+    .home-left2 {
+      flex:4;
+      width: 100%;
+      padding: 0px 30px;
+    }
+    
+    .attraction-text {
+      line-height: 28px;
+      font-size: 18px;
+      text-transform: none;
+    }
+    
+    .attraction-image-container1 {
+      flex: 2;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(193, 189, 189);
+      box-shadow: 2px 2px 5px rgb(67, 40, 40);
+      /*display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: center;*/
+    }
+    
+    .attractionimg {
+      width:100%;
+      min-height: 100%;
+      object-fit: contain;
+      user-select: none;
+  
+    }
+    
+    .no-results-box {
+      color: red;
+      font-weight: bold;
+      font-size: 18px;
+      text-align: center;
+      display: block;
+      padding: 12px;
+      background-color: transparent;
+      border: 1px solid red;
+      border-radius: 8px; 
+      width: 100%; 
+      max-width: 400px; 
+      margin: 0 auto; 
+    }
+    .sectionresultnofound{
+      width: 100%;
+    }
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: slideIn 1s ease-out;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+    @media (max-width: 1114px) {
+
+      .attraction-text {
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 16px;
+      }
+
+    }
+  
+    @media (max-width: 983px) {
+      .attraction-container16 {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    
+      .home-left2, .attraction-image-container1 {
+        width: 90%;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .attractionimg {
+        width: 100%;
+        max-height: 300px;
+        margin-top: 20px;
+      }
+    }
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+    }
+  
+    .slides {
+      display: none;
+      width: 100%;
+      height: auto;
+    }
+  
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+  
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+  
+    .prev {
+      left: 0;
+    }
+  
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+    @media (max-width: 480px) {
+      #myInput {
+        font-size: 14px;
+        padding: 10px 16px 10px 36px;
+      }
+    
+      #myUL li a {
+        font-size: 16px;
+        padding: 10px;
+      }
+    
+      .attraction-text {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+    
+  
+    

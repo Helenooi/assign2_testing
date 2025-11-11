@@ -1,0 +1,83 @@
+/* Add styles for the main container with footer */
+.main-container { 
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-container {
+  background-color: rgb(60, 60, 60);
+  color: white;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: center;
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
+/* Ensure footer-bottom stays full width at the bottom */
+.footer-bottom {
+  grid-column: 1 / -1;
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  color: #cccccc;
+  text-align: center;
+  width: 100%;
+}
+
+/* Footer section styles */
+.footer-section {
+  margin: 0 auto;
+  flex: 1;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding-left: 0; /* Remove any padding if needed */
+}
+
+.footer-section h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.footer-section p,
+.footer-section li {
+  line-height: 1.75;
+}
+
+/* Social links styling */
+.social-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.social-link {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-link:hover {
+  color: #cccccc;
+}
+
+/* Adjust layout for smaller screens */
+@media (max-width: 768px) {
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .footer-section {
+    margin: 1rem 0;
+  }
+}

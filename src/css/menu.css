@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@100..900&display=swap");
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+}
+body{
+    background:  no-repeat center center cover;
+    min-height: 100vh;
+    position: relative;
+    background-position: bottom;
+    background-size: cover;
+    font-family: "josefin sans";
+    background-color: rgba(0,0,0,0.7);
+
+    /*mayfen*/
+ 
+        padding-top: 80px;
+    
+}
+/*
+body::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 5, 0.5);
+  z-index: -1;
+}
+*/
+
+a {
+  text-decoration: none;
+}
+
+header {
+  background: linear-gradient(to bottom, black, transparent);
+  box-shadow: 0 0 px rgba(0, 0, 0, 0.5);
+  padding: 0.5rem 0rem;
+  position: fixed;
+  display: flex;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 5; /* Se/*Here*t a high z-index to ensure it's above other content */
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  height: 80px; /* Increase height to make it taller */
+  padding: 20px 0; /* Add more vertical padding if needed */
+  display: flex; /* Use flexbox for vertical centering */
+  align-items: center; /* Vertically center the content */
+  justify-content: center; /* Center horizontally if needed */
+}
+
+.container nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Make the nav span the full container width */
+  position: relative;
+  cursor: pointer;
+  z-index: 6;
+}
+
+.container nav .logo {
+  position: absolute; /* Position logo separately */
+  left: 0; /* Align it to the left */
+  color: #212a3c;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.container nav .nav-items {
+  display: flex;
+  justify-content: center;
+  width: 100%; /* Take up the remaining width */
+}
+
+.container nav .nav-items a {
+  margin: 0 10px; /* Optional: space out the navigation items */
+}
+
+.container nav .nav-link li {
+  list-style: none;
+  margin: 0 10px;
+}
+
+.container nav .nav-link li a {
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  display: block;
+  border-radius: 4px;
+}
+
+.container .penang-tag {
+  position: absolute; /* Position it independently */
+  right: 10px; /* Align it to the far right */
+  color: white; /* Text color */
+  margin: 0;
+  padding-right: 20px; /* Optional: add space from the right */
+  font-style: italic;
+}
+
+.icon {
+  display: none;
+}
+.container .nav-link {
+  display: flex;
+}
+.container .nav-link li {
+  list-style: none;
+  margin: 0 0.5rem;
+}
+.container .nav-link li a {
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  display: block;
+  border-radius: 4px;
+}
+
+/*
+.container .nav-link li a:hover,
+.container .nav-link li a.active{
+    background-color: #ecf0f1;
+}*/
+/*
+.content{
+    position: absolute;
+    top:45%;
+    left:50%;
+    transform: translate(-50%,0%);
+}
+
+.content h2{
+    font-size:2rem;
+    color:#fff;
+}
+    */
+
+section {
+  height: 400px;
+  background-color: rgb(249, 249, 249);
+  border-top: 1px solid black;
+}
+
+.icon:hover {
+  background-color: yellow; /* Changes background on hover */
+  color: black; /* Icon color on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.icon:active {
+  transform: scale(0.9); /* Slightly shrink on click */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow effect */
+}
+
+/* When the menu is expanded */
+.nav-link.active ~ .icon {
+  transform: rotate(180deg); /* Rotate the icon */
+  background-color: #00fcda; /* Change to a different color */
+  color: rgb(0, 0, 0); /* Ensure icon remains visible */
+  box-shadow: 0 10px 30px rgba(159, 244, 255, 0.6); /* Fancy purple shadow */
+}
+
+.logo-size {
+  width: 100px;
+  margin-top: -30px;
+}
+
+.navbar-button {
+  color: white; /* White text color */
+  background-color: transparent; /* Transparent background */
+  text-decoration: none; /* Remove underline by default */
+  padding: 10px 20px; /* Add padding for spacing */
+  font-size: 16px; /* Optional: Adjust font size */
+  position: relative; /* For underline effect */
+  transition: color 0.3s ease; /* Smooth text color transition */
+}
+
+.navbar-button::after {
+  content: ""; /* Pseudo-element for the underline */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0; /* Initially, no underline */
+  background-color: yellow; /* Yellow underline */
+  transition: width 0.4s ease; /* Smooth underline animation */
+}
+
+.navbar-button:hover {
+  color: yellow; /* Change text color on hover */
+}
+
+.navbar-button:hover::after {
+  width: 100%; /* Full-width underline on hover */
+}
+
+@media (max-width: 1031px) {
+  .icon {
+    font-size: 2rem; /* Adjust size as needed */
+    color: white; /* Icon color */
+    background-color: black; /* Circle background */
+    padding: 10px; /* Space around the icon */
+    border-radius: 50%; /* Makes it a circle */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    cursor: pointer; /* Indicates interactivity */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth animations */
+    display: none; /* Hide by default */
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container nav .logo {
+    font-size: 0.7rem;
+  }
+
+  .container .nav-link {
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #2e2727;
+    position: absolute;
+    width: 300px;
+    height: 270px;
+    top: -300px;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%);
+    transition: all 0.7s;
+    border-radius: 20px;
+  }
+
+  /* When the menu is expanded (active class is added) */
+  .container .nav-link.active {
+    top: 65px; /* Position it below the button */
+    transition: all 0.3s ease-in; /* Smooth transition */
+    transform: scale(0.9); /* Shrink the box size */
+    transform: translateX(-50%);
+  }
+
+  .nav-link.active {
+    top: 45px;
+    transition: all 0.3s ease-in;
+  }
+}
+
+@media (max-width: 440px) {
+    .penang-tag {
+        display: none;
+    }
+    
+}
+
+@media (max-width: 1031px) {
+    .logo {
+        position: absolute;  /* Make the logo position absolute */
+        left: 0;  /* Align it to the left */
+        z-index: 10;  /* Ensure it's above other content */
+    }
+
+    .container .nav-link {
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: #2e2727;
+        position: absolute;
+        width: 300px;
+        height: 270px;
+        top: -300px;
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%);
+        transition: all 0.7s;
+        border-radius: 20px;
+      }
+    
+      /* When the menu is expanded (active class is added) */
+      .container .nav-link.active {
+        top: 65px; /* Position it below the button */
+        transition: all 0.3s ease-in; /* Smooth transition */
+        transform: scale(0.9); /* Shrink the box size */
+        transform: translateX(-50%);
+      }
+    
+      .nav-link.active {
+        top: 45px;
+        transition: all 0.3s ease-in;
+      }
+}

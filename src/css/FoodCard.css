@@ -1,0 +1,131 @@
+/* Global box-sizing rule */
+* {
+  box-sizing: border-box;
+}
+
+/* Container for food cards */
+.food-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  justify-content: center;
+}
+
+/* Wrapper for individual food items */
+.food-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Food card styles */
+.food {
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 200px; /* Card width */
+  aspect-ratio: 1; /* Maintain square shape */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.food_image {
+  flex-grow: 1; /* Allow the image to take more space if needed */
+  margin: 0;
+  padding: 0;
+}
+
+.food_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers its container */
+  display: block;
+}
+
+/* Title section */
+.food_title {
+  padding: 20px;
+  word-wrap: break-word;
+  text-align: center;
+  cursor: default; /* Title is not clickable */
+}
+
+/* Hover effect for food card */
+.food:hover {
+  transform: scale(0.9); /* Slight shrink on hover */
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Disable hover effects when modal is active */
+.food.no-hover:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Ensure the backdrop covers everything */
+.pop-up-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent backdrop */
+  z-index: 999;
+  pointer-events: all; /* Allow interaction with the backdrop */
+}
+
+/* Disable pointer events for the background when modal is active */
+.food-wrapper.modal-active {
+  pointer-events: none;
+}
+
+/* Allow pointer events only for the pop-up window */
+.pop-up-window {
+  pointer-events: all;
+  z-index: 1000; /* Above the backdrop */
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .food {
+    width: 190px;
+  }
+}
+
+@media (max-width: 992px) {
+  .food {
+    width: 190px;
+  }
+}
+
+@media (max-width: 768px) {
+  .food {
+    width: 190px;
+  }
+}
+
+@media (max-width: 480px) {
+  .food {
+    width: 190px;
+  }
+
+  .food-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .food_title {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 496px) {
+  .food-container {
+    display: flex;
+    flex-direction: column;
+  }
+}

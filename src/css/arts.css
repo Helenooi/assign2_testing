@@ -1,0 +1,1077 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Agu+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+#my-page , #my-page body, #my-page html {
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%) !important;
+  opacity: 1 !important;
+
+  margin: 0;
+  font-family: 'Muli', sans-serif;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow-x: hidden;
+
+  margin-top: -80px;
+}
+
+#my-page body, #my-page body::before {
+  color: white;
+}
+
+
+@font-face {
+  font-family: 'Rocher';
+  src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+}
+
+
+h1 {
+  margin: 0;
+}
+
+@font-palette-values --Grays {
+  font-family: Rocher;
+  base-palette: 3;
+}
+
+.grays {
+  font-palette: --Grays;
+  font-family: 'Rocher';
+  text-align: center;
+  font-size: clamp(1rem, 10vw, 75px); /* Responsive font size */
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto 0; /* Center horizontally with auto margins */
+  padding: 0 10px; /* Add padding to prevent text from touching edges */
+  box-sizing: border-box; /* Ensure padding doesn't affect the size calculation */
+  word-wrap: break-word; /* Ensure long words break to fit in small spaces */
+}
+
+.grays1 {
+  font-palette: --Grays;
+  font-family: 'Rocher';
+  text-align: center;
+  font-size: clamp(1rem, 10vw, 75px); /* Responsive font size */
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto 0; /* Center horizontally with auto margins */
+  padding: 0 10px; /* Add padding to prevent text from touching edges */
+  box-sizing: border-box; /* Ensure padding doesn't affect the size calculation */
+  word-wrap: break-word; /* Ensure long words break to fit in small spaces */
+}
+
+
+.first-box {
+  display: flex;
+  flex-direction: row; /* Arrange children in a row */
+  align-items: center; /* Vertically center items */
+  justify-content: space-between; /* Add space between items */
+  padding: 20px;
+  margin-top: 55px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.right-content {
+  font-family: 'Rocher';
+  font-size: 20px;
+  text-align: left; /* Align text inside right-content */
+  margin-left: 400px; /* Add some spacing */
+  padding-left: -100px;
+  min-width: 200px;
+}
+
+.left-content {
+  width: 700px;
+  padding-right: 0px;
+  margin-left: 200px;
+  flex: 1;
+}
+
+/*The Galery*/
+.gallery {
+  --s: 130px; /* control the size of the images */
+  cursor: pointer;
+  display: grid;
+  gap: 5px;
+  position: relative;
+  margin-right: 100px;
+}
+
+.gallery input {
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+  inset: calc(50% - var(--s)/3);
+  cursor: pointer;
+  --g: linear-gradient(#fff 0 0) no-repeat;
+  background: var(--g) 50%/60% 3px,var(--g) 50%/3px 60%,#222;
+  transition: 1.5s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.gallery > img {
+  width: var(--s);
+  aspect-ratio: 1;
+  grid-area: 1/1;
+  border-radius: 50%;
+  object-fit: cover;
+  transform: scale(.5);
+  transition: 1s calc((var(--i) - 1)*.1s);
+}
+
+
+/* Changing here, here is original*/
+.gallery > img:nth-of-type(1) {--i:1;}
+.gallery > img:nth-of-type(2) {--i:2;}
+.gallery > img:nth-of-type(3) {--i:3;}
+.gallery > img:nth-of-type(4) {--i:4;}
+.gallery > img:nth-of-type(5) {--i:5;}
+
+
+
+/* Dont kacau here
+.gallery > input:checked ~ img {
+  transform: 
+    rotate(calc(var(--i)* 360deg/8)) translate(calc(1.5*var(--s))) 
+    rotate(calc(var(--i)*-360deg/8));
+}*/
+
+/* Adjusted for 5 images forming a semi-circle on the right */
+.gallery > input:checked ~ img {
+  transform: 
+    rotate(calc(var(--i) * 220deg / 5 + 45deg)) 
+    translateX(calc(1.5 * var(--s))) /* Moves the semi-circle to the right */
+    rotate(calc(var(--i) * -220deg / 5));
+}
+
+.gallery > input:checked {
+  transform: rotate(135deg)
+}
+
+
+/*Atas box image*/
+.first-box-figure {
+  position: relative;
+  padding: 0;
+  width: 100%;
+  max-width: 90vw;
+  margin: 25px auto;
+  height: auto; /* Explicit height */
+  z-index: 1;
+
+  --bg-image: url('');
+  background-image: var(--bg-image, none); /* Use the CSS variable */
+  background-size: cover; /* Optional, to ensure the background covers the entire area */
+  background-position: center; /* Optional, to center the background image */
+}
+
+.first-box-figure::after {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-image: var(--bg-image);
+  background-size: 100% 100%;
+  filter: blur(20px) saturate(8); /* KEY */
+  height: 100%; /* Ensure it covers the entire container */
+  width: 100%; /* Ensure it covers the entire container */
+}
+
+.first-box-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/*After here is card*/
+/*body {
+  margin: 0;
+  font-family: 'Muli', sans-serif;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.background {
+  background: url('https://images.pexels.com/photos/1095624/pexels-photo-1095624.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260')
+    center top no-repeat #252746;
+  background-size: cover;
+  display: block;
+  width: 100%;
+  height: 1000px;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+
+.background-texture {
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(#0f0140e6),
+    to(rgba(255, 214, 117, 0.9))
+  );
+  background: linear-gradient(to top, #0f0140e6, rgba(255, 214, 117, 0.9));
+  background-size: cover;
+  width: 100%;
+  height: 1000px;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}*/
+
+.carousel {
+  width: 100%;
+  height: auto; /* Ensure it adjusts to content */
+  /* overflow-x: scroll; */
+  padding: 30px;
+  padding-top: 80px;
+  position: relative;
+  overflow: visible; /* If elements overflow, adjust this carefully */
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-style: none;
+  background-image: linear-gradient(to top, #ace0f9 100%, #fff1eb 0%, );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.carousel__container {
+  white-space: nowrap;
+  margin: 70px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px; /* Adjust spacing between items */
+  padding: 20px; /* Optional: Adds padding around the carousel */
+
+  /*Here is the added item*/
+  align-items: flex-start;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+
+
+  /*Here new add */
+  overflow: visible; 
+}
+
+.categories__title {
+  font-family: "Rubik Vinyl";
+  color: rgb(77, 55, 102);
+  font-size: clamp(20px, 5vw, 50px);
+  position: relative;
+  padding-left: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.carousel-item {
+  width: 200px;
+  height: 250px;
+  border-radius: 20px;
+  background-color: #95bcd6;
+  overflow: hidden;
+  margin-right: 10px;
+  margin-top: 70px;
+  display: flex;
+  overflow: hidden;
+  scroll-snap-align: start;
+  cursor: pointer;
+  -webkit-transition: 1000ms all;
+  transition: 1000ms all;
+  -webkit-transform-origin: center left;
+  transform-origin: center left;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow for depth */
+  cursor: pointer; 
+
+  /*Here is the added item*/
+  flex: 0 0 auto; /* Prevent items from shrinking */
+  margin: 10px;
+}
+
+.carousel-item:hover ~ .carousel-item {
+  -webkit-transform: translate3d(100px, 0, 0);
+  transform: translate3d(100px, 0, 0);
+}
+
+.carousel__container:hover .carousel-item {
+  opacity: 0.3;
+}
+
+.carousel__container:hover .carousel-item:hover {
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+  opacity: 1;
+}
+
+.carousel-item__img {
+  width: 200px;
+  height: 250px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  position: relative;  /* Ensure the image is positioned correctly */
+  z-index: 0;  
+}
+
+.carousel-item__details {
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(rgba(0, 0, 0, 0.9)),
+    to(rgba(0, 0, 0, 0))
+  );
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  font-size: 10px;
+  opacity: 0;
+  -webkit-transition: 450ms opacity;
+  transition: 450ms opacity;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-left: 16px;
+}
+
+.carousel-item__details:hover {
+  opacity: 1;
+}
+
+.carousel-item__details span {
+  /* width: 10px;
+  height: 10px; */
+  font-size: 0.9rem;
+  color: #2ecc71;
+  /* background-color: white; */
+}
+
+/*I am changing here for the label*/
+
+/* General Label Styling */
+.carousel-item__label, .carousel-item__label1 {
+  font-size: 0.6rem; /* Slightly larger for better readability */
+  color: #000000; /* Make text white for better contrast */
+  display: inline-flex; /* Ensure labels align horizontally */
+  align-items: center; /* Vertically center the text */
+  justify-content: center; /* Horizontally center the text */
+  padding: 0px 12px; /* Adjust padding for a balanced look */
+  margin-right: 8px; /* Add spacing between labels */
+  border-radius: 15px; /* Round the edges for a modern style */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  margin-bottom: 10px;
+  width: 65px;
+
+  outline: none; /* Remove the blue outline when clicked or focused */
+  border: none; /* Ensure no borders are applied */
+}
+
+/* Yellow Label */
+.carousel-item__label {
+  background: linear-gradient(45deg, #ffd700, #ffc107); /* Gradient for a vibrant yellow */
+  border: 1px solid #e6b800; /* Border to define edges */
+}
+
+/* Green Label */
+.carousel-item__label1 {
+  background: linear-gradient(45deg, #28a745, #20c997); /* Gradient for green */
+  border: 1px solid #1e7e34; /* Border to define edges */
+  color: white;
+}
+
+/* Ensure no blue focus outline on hover or active states */
+.carousel-item__label:focus, .carousel-item__label:active, .carousel-item__label1:focus, .carousel-item__label1:active {
+  outline: none;
+  border: none;
+}
+
+
+/*I can stop here*/
+
+.carousel-item__details .controls {
+  padding-top: 170px;
+}
+
+.carousel-item_details .carousel-item_details--title,
+.carousel-item__details--subtitle {
+  color: #fff;
+  margin: 5px 0;
+}
+
+.carousel-item__details--title {
+  color: white;
+  font-family: 'Caveat';
+  font-size: 1.5rem;
+}
+
+/*Below is the dialog code */
+:root {
+	--vs-primary: 29 92 255;
+}
+
+/* Scoped Dialog Styles */
+.custom-dialog-container {
+	font-family: Poppins, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Optional: Dim the background */
+  z-index: 10;
+}
+/*
+/* Dialog Styling 
+.custom-dialog {
+	padding: 1rem 3rem;
+	background: white;
+	max-width: 1200px;
+	padding-top: 2rem;
+	border-radius: 20px;
+	border: 0;
+	box-shadow: 0 5px 30px 0 rgb(0 0 0 / 10%);
+	animation: fadeIn 1s ease both;
+  max-height: 90vh; /* or adjust based on your layout 
+  overflow-y: auto;
+  margin: 150px 500px;
+}*/
+
+.custom-dialog {
+  position: fixed; /* Sticks the dialog relative to the viewport */
+  top: 50%; /* Move to the vertical center */
+  left: 50%; /* Move to the horizontal center */
+  transform: translate(-50%, -50%); /* Offsets to center perfectly */
+  background: white;
+  max-width: 90%; /* Makes it responsive on smaller screens */
+  max-height: 90vh; /* Ensures it doesn't overflow vertically */
+  padding: 2rem;
+  border-radius: 20px;
+  border: 0;
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Scrollable content if it overflows vertically */
+  z-index: 10; /* Ensure it's above other elements */
+  animation: fadeIn 1s ease both;
+}
+
+.custom-dialog::backdrop {
+	animation: fadeIn 1s ease both;
+	background: rgb(255 255 255 / 40%);
+	z-index: 2;
+	backdrop-filter: blur(20px);
+}
+
+/* Close Button Styling */
+.custom-dialog .close-btn {
+	filter: grayscale(1);
+	border: none;
+	background: none;
+	position: absolute;
+	top: 15px;
+	right: 10px;
+	transition: ease filter, transform 0.3s;
+	cursor: pointer;
+	transform-origin: center;
+
+  outline: none;
+}
+
+.custom-dialog .close-btn:hover {
+	filter: grayscale(0);
+	transform: scale(1.1);
+}
+
+/* Heading Styling */
+.custom-dialog h2 {
+	font-weight: 600;
+	font-size: 2rem;
+	padding-bottom: 1rem;
+}
+
+/* Paragraph Styling */
+.custom-dialog p {
+	font-size: 1rem;
+	line-height: 1.3rem;
+	padding: 0.5rem 0;
+}
+
+.custom-dialog p a:visited {
+	color: rgb(var(--vs-primary));
+}
+
+/* Primary Button Styling */
+.custom-dialog-container .primary-btn {
+	display: inline-block;
+	font-size: 0.8rem;
+	color: #fff !important;
+	background: rgb(var(--vs-primary) / 100%);
+	padding: 13px 25px;
+	border-radius: 17px;
+	transition: background-color 0.1s ease;
+	box-sizing: border-box;
+	transition: all 0.25s ease;
+	border: 0;
+	cursor: pointer;
+	box-shadow: 0 10px 20px -10px rgb(var(--vs-primary) / 50%);
+}
+
+.custom-dialog-container .primary-btn:hover {
+	box-shadow: 0 20px 20px -10px rgb(var(--vs-primary) / 50%);
+	transform: translateY(-5px);
+}
+
+.place-image {
+  width: 400px;
+  height: auto;
+  border-radius: 20px;
+  margin-bottom: 20px;
+
+  flex-shrink: 0; /* prevent the image from shrinking */
+  object-fit: cover;
+}
+
+.try-card {
+  margin-top: 20px;
+}
+
+.try-card1 {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 1335px) { /* Adjust 800px as needed */
+  
+  .right-content {
+    margin-top: 50px; /* Add spacing between stacked elements */
+  }
+
+  .gallery {
+    --s: 80px; /* control the size of the images */
+  
+    display: grid;
+    gap: 5px;
+    position: relative;
+    margin-right: 50px;
+  }
+
+  
+  
+  .gallery input {
+    position: absolute;
+    z-index: 1;
+    border-radius: 50%;
+    inset: calc(50% - var(--s)/3);
+    cursor: pointer;
+    --g: linear-gradient(#fff 0 0) no-repeat;
+    background: var(--g) 50%/60% 3px, var(--g) 50%/3px 60%, #222;
+    transition: 1.5s;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    transform: translateX(-180%);
+  }
+  
+  .gallery > img {
+    width: var(--s);
+    aspect-ratio: 1;
+    grid-area: 1/1;
+    border-radius: 50%;
+    object-fit: cover;
+    transform: scale(0.5) translateX(-150%); /* Default position */
+    transition: 1s calc((var(--i) - 1) * 0.1s);
+  }
+  
+  /* Assign index variables to each image */
+  .gallery > img:nth-of-type(1) { --i: 1; }
+  .gallery > img:nth-of-type(2) { --i: 2; }
+  .gallery > img:nth-of-type(3) { --i: 3; }
+  .gallery > img:nth-of-type(4) { --i: 4; }
+  .gallery > img:nth-of-type(5) { --i: 5; }
+  
+  /* Adjusted for horizontal expansion */
+  .gallery > input:checked ~ img {
+    transform: 
+      translateX(calc((var(--i) - 1) * 1.2 * var(--s) + var(--s) * 0.4))
+      scale(1); /* Expand horizontally to the right */
+  }
+  
+  .gallery > input:checked {
+    transform: translateX(-180%); /* Optional: no rotation needed */
+  }
+  
+}
+
+@media (max-width: 800px) { /* Adjust 800px as needed */
+  .first-box {
+    flex-direction: row; /* Stack items vertically */
+  }
+  .right-content {
+    margin-top: 20px; /* Add spacing between stacked elements */
+  }
+}
+
+@media (max-width: 523px) {
+  .grays {
+    font-size: clamp(0.8rem, 8vw, 50px); /* Adjust font size for very small screens */
+    margin: 20px auto; /* Reduce margin to adapt to smaller space */
+    padding: 0 5px; /* Reduce padding slightly */
+  }
+}
+
+@media (max-width: 622px) {
+  .first-box {
+    flex-direction: column;
+    align-items: left;
+  }
+
+  .right-content {
+    margin-right: 500px;
+  }
+
+  .gallery {
+    --s: 50px; /* control the size of the images */
+  }
+
+  .gallery input {
+    transform: translateX(-260%);
+  }
+
+  .gallery > input:checked {
+    transform: translateX(-260%); /* Optional: no rotation needed */
+  }
+}
+
+@media (max-width: 860px) {
+  .first-box {
+    margin-right: 220px;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery input {
+    transform: translateX(100%);
+  }
+
+  .gallery > input:checked {
+    transform: translateX(100%); /* Optional: no rotation needed */
+  }
+
+  .gallery > input:checked ~ img {
+    transform: 
+      translateX(calc((var(--i) - 1) * 1.2 * var(--s) + var(--s) * 2.9))
+      scale(1); /* Expand horizontally to the right */
+  }
+
+  .gallery > img {
+    transform: scale(0.5) translateX(340%);
+  }
+}
+
+@media (max-width: 1275px) and (min-width: 861px) {
+  .left-content {
+    margin-right: 200px;
+  }
+}
+
+@media (max-width: 860px) {
+  .carousel__container {
+    display: grid;                       /* Use grid layout */
+    grid-template-columns: repeat(1);  /* Allow 3 items per row */
+    grid-gap: 0px;                       /* Space between items */
+    padding: 0 15px;  
+    overflow: visible;
+  }
+
+  .carousel-item {
+    max-width: 100%;                 /* Ensure the items take full width */
+    transform: none;              /* Remove any transforms */
+    padding-right: -100px;
+  }
+}
+
+.place-card__details {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.try-cards {
+  display: flex;
+  flex-direction: column;
+}
+
+.place-card__name {
+  font-size: 3.2rem !important; /* Make the title larger */
+  font-weight: bold; /* Emphasize the title */
+  color: #333; /* Dark color for readability */
+  font-family: 'Caveat', sans-serif;
+  margin-bottom: 10px; /* Space between the title and other content */
+  text-transform: capitalize; /* Capitalize the first letter of each word */
+  letter-spacing: 1px; /* Slight spacing between letters */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+
+  transition: letter-spacing 0.5s ease, text-shadow 0.6s ease, text-decoration 0.3s ease; /* Slower transition when hovering out */
+
+}
+
+.place-card__name:hover {
+  letter-spacing: 3px; /* Increase letter spacing */
+  transition: letter-spacing 0.6s ease, text-shadow 0.6s ease, text-decoration 0.3s ease; /* Smooth transition */
+
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add shadow to the text */
+
+  text-decoration: underline;
+}
+
+/* For styling the card labels (Location, Operating Hour, etc.) */
+.card-label {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333; /* Default color for the text */
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between the icon and the text */
+}
+
+/* Location label icon color */
+.location-label i ,.location-label1 i,.location-label2 i,.location-label3 i{
+  font-size: 1.2rem; /* Adjust icon size */
+  color: #29a2ff; /* Blue color for location icon */
+  padding-right: 9px; /* Space between the icon and text */
+}
+
+.location-label, .location-label1, .location-label2, .location-label3 {
+  margin-right: 8px;
+}
+
+.location-label1 i{
+  color: #29f2fc;
+}
+
+.location-label2 i{
+  color: #00dc25;
+}
+
+.location-label3 i{
+  color: #c200d0;
+}
+/* Operating Hour label icon color */
+.operating-hour-label i {
+  font-size: 1.2rem; /* Adjust icon size */
+  color: #ff5733; /* Orange color for operating hour icon */
+  padding-right: 5px; /* Space between the icon and text */
+}
+
+/* Optional: Styling for Description */
+.place-card p u {
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* Styling the container that holds the operating hours */
+.operate-hour-container {
+  display: flex;
+  flex-direction: column; /* Stack the items vertically */
+  gap: 10px; /* Space between the items */
+}
+
+/* Styling for each operate-hour item (weekend/weekday and their text) */
+.operate-hour-item {
+  display: flex; /* Align label and text in the same row */
+  align-items: center;
+}
+
+.operate-hour {
+  font-size: 1rem;
+  color: #333; /* Default color for the operating hour text */
+  font-style: italic;
+  margin: 0; /* Removes default margin */
+
+  background-color: #f0f0f0; /* Add a background */
+  padding: 1px 4px; /* Add padding around the text */
+  border-radius: 5px; /* Round the corners of the background */
+}
+
+.operate-hour-item span {
+  font-size: 1rem; /* Same size as label */
+  color: #555; /* Slightly darker for text */
+  margin-left: 5px; /* Space between the label and the text */
+}
+
+/* Style for the anchor link */
+.location-link {
+  text-decoration: none;   /* Remove underline */
+  color: #000;             /* Default color (black or any other color you want) */
+  transition: color 0.3s, transform 0.3s, text-decoration 0.3s;
+}
+
+/* Hover effect: Change color and scale */
+.location-link:hover {
+  color: #FF6347;          /* Change color to a nice color (like Tomato) */
+  text-decoration: underline;   /* Optional: Add underline on hover */
+  transform: scale(1.1);
+}
+
+@media (max-width:574px) {
+  .grays1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width:450px) {
+  .grays1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .categories__title {
+    font-size: 1.1rem;
+  }
+}
+
+.space-box {
+  height: 100px;
+}
+
+/*Here i try to do the horizontal bar eiheiheiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii*/
+/* Horizontal Container for Carousel Items */
+/* Horizontal Container */
+.horizontal-container {
+  display: flex;
+  flex-wrap: wrap; /* Items wrap to the next line when needed */
+  gap: 20px; /* Space between items */
+  justify-content: center; /* Center-align items */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  flex-direction: column;
+}
+
+/* Individual Card */
+.hori-cont {
+  display: flex; /* Flexbox for horizontal alignment */
+  flex: 1 1 calc(50% - 20px); /* Two cards per row by default */
+  gap: 15px; /* Space between image and text */
+  align-items: center; /* Vertically align items */
+  padding: 30px; /* Inner padding */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: auto; /* Enable scroll when content overflows */
+  max-width: 100%; /* Prevent it from stretching too far */
+  height: 250px; /* Set a fixed height for the scroll box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  flex-direction: row; /* Align items in a row */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+
+  overflow-x: auto; /* Enables horizontal scroll */
+}
+
+.hori-cont:hover {
+  transform: translateY(-5px); /* Subtle hover effect */
+}
+
+/* Image on the Left */
+.hori-cont-left-img {
+  width: 200px; /* Fixed width for the image */
+  height: 200px; /* Fixed height for the image */
+  object-fit: cover; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: Rounded corners for the image */
+}
+
+/* Text Content on the Right */
+.hori-cont-right {
+  flex: 1; /* Take remaining space */
+  text-align: left; /* Align text to the left */
+}
+
+.hori-cont-right-Name {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.hori-cont-right-Pos {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.hori-cont-right-Contribution {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.hori-cont-right i {
+  margin-right: 8px;
+  color: rgb(0, 48, 72);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hori-cont {
+    flex: 1 1 calc(100% - 20px); /* Single row per item on medium screens */
+  }
+}
+
+@media (max-width: 1100px) {
+  .hori-cont {
+    flex-direction: column; /* Switch to vertical layout */
+    align-items: flex-start; /* Align content to the left */
+
+    width:400px;
+    height: auto;
+  }
+
+  .hori-cont-left-img {
+    width: 100%; /* Image spans full width */
+    height: auto; /* Adjust height automatically */
+  }
+
+  .hori-cont-right-Name {
+    text-align: center; /* Center-align text for smaller screens */
+    width: 100%; /* Text spans full width */
+  }
+
+  .hori-cont-right-Pos,
+  .hori-cont-right-Contribution {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 433px) {
+  .hori-cont {
+    width:350px;
+    height: auto;
+  }
+}
+
+@media (max-width: 375px) {
+  .hori-cont {
+    width:300px;
+    height: auto;
+  }
+}
+
+@media (max-width: 660px) {
+  .place-card__details {
+    flex-direction: column;
+  }
+
+  .try-cards {
+    margin-top: -50px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .first-box {
+    margin-left: -430px;
+  }
+
+  .grays1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 452px) {
+  .first-box-figure {
+    width: 300px;
+    height: auto;
+  }
+}
+
+@media (max-width: 425px) {
+  .first-box {
+    margin-left: -500px;
+  }
+}
+
+@media (max-width: 918px) {
+  .first-box {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .first-box {
+    margin-left: -480px;
+  }
+}
+
+/*Here add*/
+@media (max-width: 540px) {
+  .first-box {
+    margin-left: -400px;
+  }
+}
+
+@media (max-width: 345px) {
+  .first-box {
+    margin-left: -490px;
+  }
+}
+
+@media (max-width: 415px) {
+  .first-box {
+    margin-left: -480px;
+  }
+}
+
+@media (max-width: 768px) {
+  .first-box {
+    margin-left: -260px;
+  }
+}
+
+@media (max-width: 590px) {
+  .first-box {
+    margin-left: -450px;
+  }
+}

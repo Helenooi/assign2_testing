@@ -1,0 +1,101 @@
+/* Maintain white background */
+body.foodPage, html.foodPage {
+  background: white !important;
+  opacity: 1 !important;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  height: auto; /* Allow content to dictate the height */
+  overflow-y: auto; /* Ensure scrolling is enabled */
+}
+
+.space-box {
+  height: 100px;
+}
+
+/* Full container for the Chinese food background image */
+.FoodPageImageContainerWrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.FoodPageImageContainer {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image behaves like background-size: cover */
+  position: absolute; /* Keeps the image in the background */
+}
+
+@font-face {
+  font-family: 'Rocher';
+  src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+}
+
+.FoodTextInImage {
+  position: absolute;
+  bottom: 3%; 
+  left: 3%; 
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  font-size: 16px; 
+  text-align: left;
+}
+
+@font-palette-values --Grays {
+  font-family: Rocher;
+  base-palette: 1;
+}
+
+.FoodText {
+  font-palette: --Grays;
+  font-family: Rocher;
+}
+
+/* Responsive media queries */
+@media (max-width: 768px) {
+  .FoodPageImageContainerWrapper {
+    height: 50vh; /* Adjust the wrapper height for tablets */
+  }
+
+  .FoodPageImageContainer {
+    object-fit: cover; /* Ensure the image scales properly */
+    height: 100%; /* Keep it filling the wrapper */
+  }
+
+  .FoodTextInImage {
+    font-size: 12px; /* Smaller font for tablets */
+    bottom: 10%; /* Adjust bottom margin for visibility */
+    left: 5%; /* Tighter alignment on smaller screens */
+    max-width: 90%; /* Prevent text overflow */
+  }
+}
+
+@media (max-width: 480px) {
+  .FoodPageImageContainerWrapper {
+    height: 40vh; /* Adjust the wrapper height for smaller screens */
+  }
+
+  .FoodPageImageContainer {
+    object-fit: cover; /* Ensure the image behaves like `background-size: cover` */
+    height: 100%; /* Keep the image filling the wrapper */
+  }
+
+  #root {
+    width: 100%; /* Ensure full width for small screens */
+    height: auto; /* Allow height to adjust based on content */
+    min-width: 100%; /* Prevent fixed width from restricting layout */
+  }
+
+  .FoodTextInImage {
+    font-size: 8px; /* Smaller text size for better readability */
+    bottom: 20px; /* Adjust placement for better fit */
+    left: 5%; /* Maintain alignment */
+    text-align: center; /* Center align text for smaller screens */
+    max-width: 90%; /* Ensure text doesn’t overflow */
+  }
+}
